@@ -1,0 +1,10 @@
+$Nesans-font-path: "../../font/NesansSemiBold" !default;
+/* Nesans-600 - latin */
+@font-face {
+  font-display: swap;
+  font-family: "Nesans";
+  font-style: normal;
+  font-weight: 600;
+  src: url("#{$Nesans-font-path}/NesansSemiBold.woff2") format("woff2"),
+    url("#{$Nesans-font-path}/NesansSemiBold.ttf") format("truetype");
+}
