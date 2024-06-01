@@ -6,14 +6,13 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel";
 
 export function initMainSlider() {
-  $slickNoticias = $(".slickNoticias");
-  slickNoticiasSettings = {
-    slidesToShow: 3,
+  const $slickEmpresas = $(".slickEmpresas");
+  const slickEmpresasSettings = {
+    slidesToShow: 6,
     slidesToScroll: 1,
     dots: true,
-    arrows: true,
+    arrows: false,
     infinite: false,
-    adaptiveHeight: false,
     responsive: [
       {
         breakpoint: 1024,
@@ -31,5 +30,37 @@ export function initMainSlider() {
       },
     ],
   };
-  $slickNoticias.slick(slickNoticiasSettings);
+  $slickEmpresas.slick(slickEmpresasSettings);
+}
+
+export function initTestimoniosSlider() {
+  const $slickTestimonios = $(".slickTestimonios");
+  const slickTestimoniosSettings = {
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    dots: true,
+    arrows: false,
+    infinite: true,
+    centerMode: true,
+    centerPadding: "50px",
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          centerMode: true,
+          centerPadding: "10px",
+        },
+      },
+      {
+        breakpoint: 680,
+        settings: {
+          slidesToShow: 1,
+          centerMode: false,
+          centerPadding: "10px",
+        },
+      },
+    ],
+  };
+  $slickTestimonios.slick(slickTestimoniosSettings);
 }

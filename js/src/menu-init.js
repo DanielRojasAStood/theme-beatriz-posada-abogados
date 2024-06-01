@@ -5,6 +5,9 @@ const $menuMobile = $("[data-menu-mobile]");
 const $botonToggleMenu = $("[data-toggle-menu]");
 const $botonLink = $("[data-link]");
 
+const $dataFooterOpenMenu = $("[data-footer-open-menu]");
+$dataFooterOpenMenu.click(openMenuFooter);
+
 $(document).ready(function () {
   $botonToggleMenu.click(toggleMenu);
   $botonLink.click(closeMenu);
@@ -22,6 +25,10 @@ export function toggleMenu() {
 export function closeMenu() {
   $botonToggleMenu.removeClass("is-active");
   $menuMobile.removeClass("is-active");
+}
+
+export function openMenuFooter(e) {
+  $(e.currentTarget).next(".seccionFooter__menu").slideToggle();
 }
 
 $(window).scroll(function () {

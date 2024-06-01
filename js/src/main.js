@@ -1,5 +1,6 @@
 import {
   initMainSlider,
+  initTestimoniosSlider,
 } from "./slick-init";
 import { toggleMenu, closeMenu } from "./menu-init";
 import { openModal, closeModal } from "./modal-init";
@@ -12,6 +13,7 @@ let Main = {
       openModal();
       closeModal();
       initMainSlider();
+      initTestimoniosSlider();
     });
   },
 };
