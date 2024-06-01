@@ -13,6 +13,9 @@ $sitename = get_bloginfo('name');
 $grupo_targetas = get_field('grupo_targetas');
 $targetas = isset($grupo_targetas['targetas']) ? $grupo_targetas['targetas'] : array();
 
+$pagina_inicio      = get_page_by_path('inicio')->ID;
+$grupo_metodo       = ($pagina_inicio) ? get_field('grupo_metodo', $pagina_inicio) : null;
+
 get_header(); ?>
 
 <!-- CONTENIDO -->
@@ -72,6 +75,13 @@ get_header(); ?>
                     <p>No hay tarjetas disponibles en este momento.</p>
                 <?php endif; ?>
             </section>
+
+            <!-- Metodo -->
+            <?php 
+            set_query_var('grupo_metodo', $grupo_metodo);
+            get_template_part('template-parts/secciones/seccion', 'metodo');
+            ?>
+            <!-- Fin Metodo -->
 
         </article>
     <?php endwhile; ?>

@@ -33,6 +33,9 @@ function img_setup_theme() {
 }
 add_action('after_img_setup_theme', 'setup_theme');
 
+add_filter('wpcf7_autop_or_not', '__return_false');
+
+
 ?>
 
 
