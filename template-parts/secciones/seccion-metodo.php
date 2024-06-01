@@ -1,15 +1,15 @@
 <?php
-$sitename       = get_bloginfo('name');
-$grupo_metodo   = get_field('grupo_metodo');
-$titulo         = !empty($grupo_metodo['titulo']) ? $grupo_metodo['titulo'] : '';
+$sitename           = get_bloginfo('name');
+$get_grupo_metodo   = !empty(get_field('grupo_metodo')) ? get_field('grupo_metodo') : get_query_var('grupo_metodo');
+$titulo             = !empty($grupo_metodo['titulo']) ? $grupo_metodo['titulo'] : '';
 
 $palabras       = explode(' ', $titulo);
 $texto_1        = isset($palabras[0]) ? esc_html($palabras[0]) : '';
 $texto_2        = isset($palabras[1]) ? esc_html($palabras[1]) : '';
 
-$fondo          = !empty($grupo_metodo['fondo']) ? esc_attr($grupo_metodo['fondo']) : '';
+$fondo          = !empty($get_grupo_metodo['fondo']) ? esc_attr($get_grupo_metodo['fondo']) : '';
 
-$imagen_id      = !empty($grupo_metodo['imagen']['ID']) ? intval($grupo_metodo['imagen']['ID']) : 0;
+$imagen_id      = !empty($get_grupo_metodo['imagen']['ID']) ? intval($get_grupo_metodo['imagen']['ID']) : 0;
 $imagen_src     = $imagen_id ? esc_url(wp_get_attachment_image_url($imagen_id, 'custom-size')) : '';
 $imagen_srcset  = $imagen_id ? esc_attr(wp_get_attachment_image_srcset($imagen_id, 'custom-size')) : '';
 $imagen_info    = $imagen_id ? wp_get_attachment_image_src($imagen_id, 'full') : array('', '', '');
@@ -18,7 +18,7 @@ $imagen_height  = !empty($imagen_info[2]) ? intval($imagen_info[2]) : '';
 $imagen_alt     = $imagen_id ? esc_attr(get_post_meta($imagen_id, '_wp_attachment_image_alt', true)) : '';
 $imagen_title   = $imagen_id ? esc_html(get_the_title($imagen_id)) : '';
 
-$items          = !empty($grupo_metodo['items']) ? $grupo_metodo['items'] : array();
+$items          = !empty($get_grupo_metodo['items']) ? $get_grupo_metodo['items'] : array();
 ?>
 <section class="seccionMetodo">
     <div class="seccionMetodo__fondo" style="background-color: <?php echo $fondo; ?>">

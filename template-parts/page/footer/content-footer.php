@@ -9,7 +9,7 @@ $redes_sociales     = $grupo_footer['grupo_logo']['redes_sociales'];
 $contactos          = $grupo_footer['grupo_contactanos']['contacto'];
 $servicios          = $grupo_footer['grupo_servicios']['servicios'];
 
-$grupo_copyright = ($footer) ? get_field('grupo_copyright', $footer) : null;
+// $grupo_copyright = ($footer) ? get_field('grupo_copyright', $footer) : null;
 ?>
 <footer class="seccionFooter">
     <div class="seccionFooter__fondo" style="background-color: <?php echo $fondo; ?>">

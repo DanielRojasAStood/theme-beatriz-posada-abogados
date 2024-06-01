@@ -1,7 +1,7 @@
 <?php
-$grupo_contador = get_field('grupo_contador');
-$items = !empty($grupo_contador['items']) ? $grupo_contador['items'] : array();
-$fondo = !empty($grupo_contador['fondo']) ? esc_attr($grupo_contador['fondo']) : '';
+$get_grupo_contador = !empty(get_field('grupo_contador')) ? get_field('grupo_contador') : get_query_var('grupo_contador');
+$items = !empty($get_grupo_contador['items']) ? $get_grupo_contador['items'] : array();
+$fondo = !empty($get_grupo_contador['fondo']) ? esc_attr($get_grupo_contador['fondo']) : '';
 ?>
 <section class="seccionContador">
     <div class="seccionContador__fondo" style="background-color: <?php echo $fondo; ?>">

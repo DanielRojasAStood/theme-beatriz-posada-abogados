@@ -32,13 +32,14 @@ $imagen_title   = $imagen_id ? esc_html(get_the_title($imagen_id)) : '';
                 </a>
                 <div class="seccionDificultad__dificultades">
                     <?php foreach ($dificultades as $dificultad) { 
-                        $enlace__url = $dificultad['enlace']['url'];
-                    ?>
-                        <a href="<?php echo $enlace__url; ?>" class="seccionDificultad__dificultad" title="">
-                            <?php echo $dificultad['dificultad']?>
-                            <img width="40" height="31" src="<?php echo IMG_BASE . 'icon/icon-next.svg'?>" alt="siguiente - <?php echo $sitename; ?>" title="siguiente">
-                        </a>
-                    <?php } ?>
+                        $enlace__url    = $dificultad['enlace']['url'];
+                        $titulo         = $dificultad['dificultad'];
+                        
+                        set_query_var('enlace__url', $enlace__url);
+                        set_query_var('titulo', $titulo);
+
+                        get_template_part('template-parts/content', 'links');
+                    } ?>
                 </div>
             </div>
             <figure class="seccionDificultad__img" data-srcset="<?php echo $imagen_srcset; ?>"  style="background-image: url('<?php echo esc_url($imagen_info[0]); ?>');">
