@@ -27,7 +27,6 @@ get_header(); ?>
                         </header>
                     </div>
                     <figure class="paginaContactanos__img" style="background-image: url(<?php echo $imagen_src; ?>)">
-                        Imagen
                     </figure>
                     <div class="paginaContactanos__formulario">
                         <?php echo do_shortcode('[contact-form-7 id="47f878c" title="Formulario de contacto"]')?>

@@ -2,28 +2,28 @@ import $ from "jquery";
 
 const $header = $("[data-header]");
 const $menuMobile = $("[data-menu-mobile]");
-const $botonToggleMenu = $("[data-toggle-menu]");
-const $botonLink = $("[data-link]");
+const $botonAbrirMenu = $("[data-abrir-menu]");
+const $botonCerrarMenu = $("[data-cerrar-menu]");
 
 const $dataFooterOpenMenu = $("[data-footer-open-menu]");
 $dataFooterOpenMenu.click(openMenuFooter);
 
 $(document).ready(function () {
-  $botonToggleMenu.click(toggleMenu);
-  $botonLink.click(closeMenu);
+  $botonAbrirMenu.click(abrirMenu);
+  $botonCerrarMenu.click(cerrarMenu);
 
   $botonToggleMenu.click(function (event) {
     event.preventDefault();
   });
 });
 
-export function toggleMenu() {
-  $(this).toggleClass("is-active");
+export function abrirMenu() {
+  $('body').addClass("is-overflow");
   $menuMobile.toggleClass("is-active");
 }
 
-export function closeMenu() {
-  $botonToggleMenu.removeClass("is-active");
+export function cerrarMenu() {
+  $('body').removeClass("is-overflow");
   $menuMobile.removeClass("is-active");
 }
 

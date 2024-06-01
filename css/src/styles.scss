@@ -148,6 +148,10 @@ body {
   font-weight: 400;
   line-height: 22px;
   -webkit-font-smoothing: antialiased;
+
+  &.is-overflow {
+    overflow: hidden;
+  }
 }
 
 img {
@@ -266,6 +270,12 @@ svg {
     line-height: 37px;
   }
 
+  &--34 {
+    font-size: var(--34);
+    font-weight: 600;
+    line-height: 40px;
+  }
+
   &--200 {
     font-size: var(--46);
     font-weight: 600;
@@ -321,6 +331,184 @@ svg {
 
   &--500 {
     font-weight: 500 !important;
+  }
+}
+
+/* seccionHeader */
+.seccionHeader {
+  &__fondo {
+    width: 100%;
+    padding: 20px 20px;
+    background-color: var(--E0D6CD);
+    border-bottom: 1px solid var(--1F2E33);
+
+    @media only screen and (min-width: 1024px) {
+      padding: 30px 50px;
+    }
+  }
+
+  &__grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+
+  &__boton {
+    &-menu {
+      padding: 0;
+      border: 0;
+      background-color: transparent;
+      cursor: pointer;
+
+      @media only screen and (min-width: 1024px) {
+        display: none;
+      }
+    }
+
+    &-cerrar {
+      font-family: var(--font-opensans);
+      position: absolute;
+      right: 50px;
+      top: 50px;
+      display: flex;
+      align-items: center;
+      column-gap: 5px;
+      padding: 0;
+      border: 0;
+      font-size: var(--16);
+      font-weight: 300;
+      line-height: 21px;
+      background-color: transparent;
+      cursor: pointer;
+    }
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @media only screen and (min-width: 1024px) {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  li {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    @media only screen and (min-width: 1024px) {
+      display: flex;
+    }
+
+    a {
+      color: var(--1F2E33);
+      font-weight: 300;
+      text-decoration: none;
+    }
+  }
+
+  &__logo {
+    display: none;
+    text-align: center;
+
+    @media only screen and (min-width: 1024px) {
+      display: block;
+    }
+
+    img {
+      width: 35px;
+      height: 70px;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+  }
+
+  .beatriz-posada {
+    display: flex;
+    min-width: 290px;
+
+    a {
+      font-family: var(--font-nesans);
+      @extend .text--34;
+
+      &:after {
+        content: "Abogados";
+        font-family: var(--font-opensans);
+        display: block;
+        font-size: var(--10);
+        font-weight: 400;
+        line-height: normal;
+      }
+    }
+  }
+}
+
+/* sectionMenuMobile */
+.sectionMenuMobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--E0D6CD);
+  transform: translate3d(-100%, 0, 0);
+  transition: all 0.4s ease;
+  z-index: 2;
+
+  &.is-active {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .seccionHeader {
+    &__menu {
+      height: 100%;
+    }
+
+    &__ul {
+      display: grid;
+      text-align: center;
+      row-gap: 30px;
+
+      li {
+        a {
+          color: var(--1F2E33);
+          text-decoration: none;
+          font-size: var(--24);
+          font-weight: 300;
+        }
+
+        &.current-menu-item {
+          text-decoration: underline;
+        }
+      }
+
+      .beatriz-posada {
+        display: flex;
+        justify-content: center;
+        min-width: 290px;
+
+        a {
+          font-family: var(--font-nesans);
+          @extend .text--34;
+
+          &:after {
+            content: "Abogados";
+            font-family: var(--font-opensans);
+            display: block;
+            font-size: var(--10);
+            font-weight: 400;
+            line-height: normal;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -858,6 +1046,7 @@ svg {
     }
   }
 }
+
 /* Página servicios */
 .seccionServicios {
   /* BannerTitulo */
@@ -1105,7 +1294,7 @@ label {
       background: url(../../images/icon/icon-arrow-black.svg);
     }
 
-    input[type=submit] {
+    input[type="submit"] {
       cursor: pointer;
     }
   }
