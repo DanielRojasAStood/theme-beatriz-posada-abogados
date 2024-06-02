@@ -81,7 +81,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-services.php"
+                "value": "plantilla-servicios.php"
             }
         ]
     ],
@@ -94,5 +94,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1717250682
+    "modified": 1717295345
 }

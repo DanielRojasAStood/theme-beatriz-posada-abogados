@@ -1,7 +1,7 @@
 <?php
 
-if ( ! function_exists('cardiokids_add_theme_scripts') ) {
-	function cardiokids_add_theme_scripts()
+if ( ! function_exists('beatriz_posada_add_theme_scripts') ) {
+	function beatriz_posada_add_theme_scripts()
 	{
 		$cssFilePath = glob( get_template_directory() . '/css/build/main.min.*.css' );
 		$cssFileURI = get_template_directory_uri() . '/css/build/' . basename($cssFilePath[0]);
@@ -17,4 +17,4 @@ if ( ! function_exists('cardiokids_add_theme_scripts') ) {
 		));
 	}
 }
-add_action('wp_enqueue_scripts', 'cardiokids_add_theme_scripts');
+add_action('wp_enqueue_scripts', 'beatriz_posada_add_theme_scripts');

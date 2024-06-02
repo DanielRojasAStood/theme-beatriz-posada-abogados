@@ -11,10 +11,6 @@ $dataFooterOpenMenu.click(openMenuFooter);
 $(document).ready(function () {
   $botonAbrirMenu.click(abrirMenu);
   $botonCerrarMenu.click(cerrarMenu);
-
-  $botonToggleMenu.click(function (event) {
-    event.preventDefault();
-  });
 });
 
 export function abrirMenu() {

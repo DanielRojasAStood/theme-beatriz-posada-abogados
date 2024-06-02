@@ -68,7 +68,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-contact.php"
+                "value": "plantilla-contacto.php"
             }
         ]
     ],
@@ -81,5 +81,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1717272897
+    "modified": 1717295315
 }

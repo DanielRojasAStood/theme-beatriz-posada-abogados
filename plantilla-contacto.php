@@ -1,6 +1,6 @@
 <?php 
 /*
-* Template Name: Página Contáctanos
+* Template Name: Plantilla Contáctanos
 * Template Post Type: page
 * Description: Contáctanos
 *

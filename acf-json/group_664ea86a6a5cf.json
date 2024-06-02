@@ -1246,7 +1246,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-home.php"
+                "value": "plantilla-inicio.php"
             }
         ]
     ],
@@ -1259,5 +1259,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1717210905
+    "modified": 1717295324
 }

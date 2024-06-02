@@ -1,6 +1,6 @@
 <?php 
 /* 
-Template Name: Página Inicio
+Template Name: Plantilla Inicio
 */
 
 $grupo_banner = get_field('grupo_banner');

@@ -1,6 +1,6 @@
 <?php 
 /*
-* Template Name: Página Servicios
+* Template Name: Plantilla Servicios
 * Template Post Type: page
 * Description: Nuestros servicios
 *

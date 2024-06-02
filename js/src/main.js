@@ -4,6 +4,7 @@ import {
 } from "./slick-init";
 import { abrirMenu, cerrarMenu } from "./menu-init";
 import { openModal, closeModal } from "./modal-init";
+import {} from "./cargar-mas-init";
 
 let Main = {
   init: async function () {
