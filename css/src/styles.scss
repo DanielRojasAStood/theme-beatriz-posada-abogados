@@ -445,6 +445,12 @@ svg {
     display: flex;
     min-width: 290px;
 
+    &.current_page_item {
+      a {
+        text-decoration: none;
+      }
+    }
+
     a {
       font-family: var(--font-nesans);
       @extend .text--34;
@@ -1082,9 +1088,12 @@ svg {
 
       &:first-child {
         border-top: 1px solid var(--E0D6CD);
+        @media only screen and (min-width: 1200px) {
+          border-top: 0;
+        }
       }
 
-      @media only screen and (min-width: 1200px) {
+      @media only screen and (min-width: 1024px) {
         padding-top: 40px;
       }
     }
