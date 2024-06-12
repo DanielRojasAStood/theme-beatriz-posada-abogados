@@ -29,7 +29,7 @@ get_header(); ?>
                             <header>
                                 <h1 class="font-nesans h2"><?php echo esc_html(get_the_title()); ?></h1>
                             </header>
-                            <div class="text--16">
+                            <div class="text--16 fw--300">
                                 <?php the_content(); ?>
                             </div>
                         </div>

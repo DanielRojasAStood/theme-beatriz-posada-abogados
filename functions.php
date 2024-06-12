@@ -41,6 +41,7 @@ function slacip_menus()
 {
     register_nav_menus(array(
         'menu-principal' => 'Menu Principal',
+        'menu-mobile' => 'Menú Mobile',
     ));
 }
 add_action('init', 'slacip_menus');

@@ -11,7 +11,7 @@ $testimonios        = !empty($grupo_testimonios['testimonios']) ? $grupo_testimo
     <div class="seccionTestimonios__fondo" style="background-color: <?php echo $fondo; ?>">
         <div class="seccionTestimonios__titulo">
             <h2 class="h2 font-nesans"><?php echo $titulo; ?></h2>
-            <p class="text--16"><?php echo $descripcion; ?></p>
+            <p class="text--16 fw--300"><?php echo $descripcion; ?></p>
         </div>
         <div class="seccionTestimonios__targetas slickTestimonios">
             <?php foreach ($testimonios as $testimonio) { 

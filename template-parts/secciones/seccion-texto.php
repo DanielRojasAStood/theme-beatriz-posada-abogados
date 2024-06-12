@@ -13,8 +13,8 @@ $descripcion    = !empty($grupo_texto['descripcion']) ? esc_html($grupo_texto['d
     <div class="seccionTexto__fondo" style="background-color: <?php echo $fondo; ?>">
         <div class="container">
             <div class="seccionTexto__contenido">
-                <h2 class="font-nesans text-24"><?php echo $titulo; ?></h2>
-                <p class="text--12"><?php echo $rol; ?></p>
+                <h2 class="font-nesans text--32" style="line-height: 23px;"><?php echo $titulo; ?></h2>
+                <p class="text--16 fw--300"><?php echo $rol; ?></p>
                 <p class="font-nesans text--32">
                     <img width="98" height="138" class="quote" src="<?php echo esc_url(IMG_BASE . 'icon/quote-left.svg'); ?>" alt="icon" title="icon">
                     <?php echo $descripcion; ?>

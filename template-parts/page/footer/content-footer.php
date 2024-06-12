@@ -15,10 +15,8 @@ $servicios          = $grupo_footer['grupo_servicios']['servicios'];
     <div class="seccionFooter__fondo" style="background-color: <?php echo $fondo; ?>">
         <div class="seccionFooter__grid">
             <div class="seccionFooter__logo">
-                <img width="33" height="55" src="<?php echo $logo; ?>" alt="Beatriz posada - <?php echo $sitename; ?>" title="Beatriz posada">
-                <h2 class="font-nesans text--24 color--E0D6CD">Beatriz Posada</h2>
-                <p class="text--12 color--E0D6CD">Abogados</p>
-                <div class="font-nesans text--24 color--E0D6CD">
+                <img width="230" height="150" src="<?php echo $logo; ?>" alt="Beatriz posada - <?php echo $sitename; ?>" title="Beatriz posada">
+                <div class="seccionFooter__copy">
                     <?php echo $descripcion; ?>
                 </div>
                 <div class="seccionFooter__sociales">

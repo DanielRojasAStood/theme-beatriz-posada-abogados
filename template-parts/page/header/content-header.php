@@ -23,7 +23,7 @@
         <img width="24px" height="24" src="<?php echo IMG_BASE . 'icon/icon-close.svg'; ?>" alt="cerrar" title="cerrar">
     </button>
     <div class="seccionHeader__menu">
-        <?php get_template_part('template-parts/page/header/content', 'header-menu') ?>
+        <?php get_template_part('template-parts/page/header/content', 'header-menu-mobile') ?>
     </div>
     <div class="seccionHeader__logo">
         <?php get_template_part('template-parts/page/header/content', 'header-logo') ?>

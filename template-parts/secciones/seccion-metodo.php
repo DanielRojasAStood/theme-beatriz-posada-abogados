@@ -1,7 +1,7 @@
 <?php
 $sitename           = get_bloginfo('name');
 $get_grupo_metodo   = !empty(get_field('grupo_metodo')) ? get_field('grupo_metodo') : get_query_var('grupo_metodo');
-$titulo             = !empty($grupo_metodo['titulo']) ? $grupo_metodo['titulo'] : '';
+$titulo             = !empty($get_grupo_metodo['titulo']) ? $get_grupo_metodo['titulo'] : '';
 
 $palabras       = explode(' ', $titulo);
 $texto_1        = isset($palabras[0]) ? esc_html($palabras[0]) : '';

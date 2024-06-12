@@ -14,18 +14,62 @@ $(document).ready(function () {
 });
 
 export function abrirMenu() {
-  $('body').addClass("is-overflow");
+  $("body").addClass("is-overflow");
   $menuMobile.toggleClass("is-active");
 }
 
 export function cerrarMenu() {
-  $('body').removeClass("is-overflow");
+  $("body").removeClass("is-overflow");
   $menuMobile.removeClass("is-active");
 }
 
 export function openMenuFooter(e) {
-  $(e.currentTarget).next(".seccionFooter__menu").slideToggle();
+  var $currentTarget = $(e.currentTarget);
+  var $menu = $currentTarget.next(".seccionFooter__menu");
+
+  $(".seccionFooter__menu").not($menu).slideUp();
+  $(".activo").not($currentTarget).removeClass("activo");
+
+  $menu.slideToggle();
+  $currentTarget.toggleClass("activo");
 }
+
+function isScrolledIntoView(elem) {
+  var docViewTop = $(window).scrollTop();
+  var docViewBottom = docViewTop + $(window).height();
+  var elemTop = $(elem).offset().top;
+  return elemTop <= docViewBottom && elemTop >= docViewTop;
+}
+
+function iniciarContador($counter) {
+  var targetNumber = $counter.data("numero");
+  var duration = 2000; // Duración en milisegundos (2 segundos)
+
+  $({ Counter: 0 }).animate(
+    { Counter: targetNumber },
+    {
+      duration: duration,
+      easing: "swing", // Tipo de animación (puedes cambiarla)
+      step: function () {
+        $counter.text("+ " + Math.ceil(this.Counter));
+      },
+      complete: function () {
+        $counter.data("iniciado", true); // Marcar el contador como iniciado
+      },
+    }
+  );
+}
+
+$(window)
+  .on("scroll", function () {
+    $(".contador").each(function () {
+      var $counter = $(this);
+      if (isScrolledIntoView($counter) && !$counter.data("iniciado")) {
+        iniciarContador($counter);
+      }
+    });
+  })
+  .trigger("scroll"); // Verificar al cargar la página
 
 $(window).scroll(function () {
   if ($(this).scrollTop() > 10) {
@@ -33,19 +77,4 @@ $(window).scroll(function () {
   } else {
     $header.removeClass("is-scroll");
   }
-
-  // $('section').each(function() {
-  //   if (isScrolledIntoView($(this), $(window).height() / 4)) {
-  //     $(this).addClass('animated');
-  //   }
-  // });
-
-  // function isScrolledIntoView(elem, threshold) {
-  //   var docViewTop = $(window).scrollTop();
-  //   var docViewBottom = docViewTop + $(window).height();
-  //   var elemTop = $(elem).offset().top;
-  //   var elemBottom = elemTop + $(elem).height();
-  //   var middleThreshold = $(window).height() / 2;
-  //   return ((elemTop + threshold <= docViewBottom) && (elemBottom >= docViewTop + middleThreshold));
-  // }
 });
