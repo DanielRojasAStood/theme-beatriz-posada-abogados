@@ -5,6 +5,25 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel";
 
+export function initBannerSlick() {
+  const $slickBanner = $(".slickBanner");
+  const slickBannerSettings = {
+    fade: true,
+    cssEase: "linear",
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    touchMove: true,
+    adaptiveHeight: true,
+    draggable: true,
+    dots: false,
+    arrows: false,
+    infinite: false,
+  };
+  $slickBanner.slick(slickBannerSettings);
+}
+
 export function initMainSlider() {
   const $slickEmpresas = $(".slickEmpresas");
   const slickEmpresasSettings = {

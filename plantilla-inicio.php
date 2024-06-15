@@ -29,8 +29,10 @@ $activar_texto = $grupo_texto['activar_texto'];
 get_header();
 ?>
 <!-- CONTENIDO -->
-    <main>
-
+    <!-- Loading -->
+    <?php get_template_part('template-parts/content', 'loading');?>
+    <!-- fin Loading -->
+    <main id="main-content">
         <?php if($activar_banner) { ?>
         <!-- Banner -->
         <?php get_template_part('template-parts/secciones/seccion', 'banner');?>

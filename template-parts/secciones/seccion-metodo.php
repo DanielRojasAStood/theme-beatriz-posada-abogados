@@ -49,7 +49,10 @@ $items          = !empty($get_grupo_metodo['items']) ? $get_grupo_metodo['items'
                                 <p class="color--E0D6CD"><?php echo $descripcion; ?></p>
                             </div>
                             <span>
-                                <img width="40" height="31" src="<?php echo IMG_BASE . 'icon/icon-next.svg'?>" alt="siguiente - <?php echo $sitename; ?>" title="siguiente">
+                                <?php 
+                                    get_template_part('template-parts/content', 'icono');
+                                    display_icon('next-purple'); 
+                                ?>
                             </span>
                         </a>
                     <?php $idx++; } ?>
